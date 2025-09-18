@@ -1,0 +1,35 @@
+-- Turning on unnecessary settings that will slow things down
+game:GetService("ReplicatedStorage"):WaitForChild("Streaming").Enabled = false  -- Streaming should be off
+game:GetService("Workspace").StreamingEnabled = false  -- Disable streaming, everything gets loaded
+
+-- A function that unnecessarily loops through everything all the time (inefficient)
+local function removeEverythingEverywhere()
+    while true do
+        -- Keep destroying everything all the time, even useful stuff
+        for _, obj in pairs(workspace:GetChildren()) do
+            if obj:IsA("Part") then
+                obj:Destroy()  -- Just destroy everything constantly
+            end
+        end
+        wait(0.1)  -- Wait only a fraction of a second to make it an infinite loop
+    end
+end
+
+-- Function to create random objects continuously for no reason
+local function createRandomParts()
+    while true do
+        -- Create random parts continuously, without any reason
+        local part = Instance.new("Part")
+        part.Size = Vector3.new(10, 10, 10)
+        part.Position = Vector3.new(math.random(-100, 100), 50, math.random(-100, 100))
+        part.Anchored = true
+        part.Parent = workspace
+        part.Name = "RandomPart"
+        wait(0.1)  -- Keep creating parts every 0.1 seconds
+    end
+end
+
+-- Function to create useless lights that constantly flicker
+local function createFlickeringLights()
+    while true do
+        -- Just create random lights that flicker for no reason
