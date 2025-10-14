@@ -1,6 +1,46 @@
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
+local TPButton = Instance.new("TextButton")
+local TP2Button = Instance.new("TextButton")
+local TRASButton = Instance.new("TextButton")
+local CloseButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.3
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.7, 0, 0.3, 0)
+Frame.Size = UDim2.new(0, 200, 0, 230)
+Frame.Active = true
+Frame.Draggable = true
+
+Title.Parent = Frame
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.Text = "🍋 Limón Hub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 0)
+Title.Font = Enum.Font.SourceSansBold
+Title.TextScaled = true
+
+-- Buttons setup
+local buttons = {
+    {TPButton, "TP - Save Position", Color3.fromRGB(255, 100, 100)},
+    {TP2Button, "TP2 - Go to Position", Color3.fromRGB(100, 255, 100)},
+    {TRASButton, "TRAS - NoClip", Color3.fromRGB(100, 100, 255)},
+}
+
+for i, data in ipairs(buttons) do
+    local btn, text, color = unpack(data)
+    btn.Parent = Frame
+    btn.BackgroundColor3 = color
+    btn.Size = UDim2.new(0.9, 0, 0, 40)
+    btn.Position = UDim2.new(0.05,local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
 local Box = Instance.new("TextBox")
 local Button = Instance.new("TextButton")
 
